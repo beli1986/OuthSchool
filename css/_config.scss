@@ -1,0 +1,54 @@
+$primary-color: #5027b5;
+$secundary-color: #ff00c7;
+$back-color: linear-gradient(to right, #592cb6, #ff00c7);
+$text-color: white;
+
+@mixin transition-ease{
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin small-sm{
+    @media screen and (max-width: 480px) {
+        @content;
+      }
+}
+
+@mixin media-md{
+     @media screen and (max-width: 768px) {
+        @content;
+      }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+  
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
+}
+  
+:root {
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 40px 0;
+}
+
+a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+p{
+    font-size: 18px;
+}
+

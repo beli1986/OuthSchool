@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OUTHSCHOOL</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/667df741ea.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-------------Nav-Bar---------------->
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">
+          <img
+            src="image/logo.png"
+            alt=""
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          /> OUTHSCHOOL</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="nav-menu collapse navbar-collapse text-end justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#courses">COURSES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">PRICING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT US</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class=" nav-right collapse navbar-collapse text-end justify-content-end"
+          id="navbarNav"
+          ><div>
+          <a class="" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><i class="fa-regular fa-user"></i> Accound</a>
+          </div>
+        
+          <!-- HTML za prikaz korpe -->
+          <div id="cart-container">
+            <div id="cart-icon">
+              <i id="shop-icon" class="fas fa-shopping-cart" ></i><span id="cart-notification">0</span>
+            </div>
+            <div id="cart">
+              <h2>Cart</h2>
+              <hr>
+              <ul id="cart-items"></ul>
+              <p>Total: <span id="cart-total">0</span> $</p>
+              <button id="empty-cart-btn" onclick="emptyCart()">
+                Clear Cart
+              </button>
+              <button id="close-cart-btn" onclick="closeCart()">Close Cart</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </nav>
+
+    <!------------------Accound Log in--------------->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Accound Log In</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn-accound">Log In</button>
+            <p>Or</p>
+            <button class="btn-accound" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Sing Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">Accound Sing Up</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationCustom01" value="" placeholder="Your first name" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Your last name" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn-accound" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Log In</button>
+            <p>Or</p>
+            <button type="submit" class="btn-accound">Sing In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!----------------Section Main--------------->
+    <section class="main">
+      <div class=" container-lg">
+        <div class="main-row row justify-content-center align-items-center">
+          <div class="col-md-8">
+            <h1 class="main__head-text">
+              Upgrade YOUR skills for better future
+            </h1>
+            <p class="main__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odit et ea id nulla voluptatem. Deserunt delectus voluptas necessitatibus iure?
+            </p>
+            <!---------------Toggle left offcanvas---------->
+            <button class="main__button-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasStart" aria-controls="offcanvasStart">Check Courses</button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasStart" aria-labelledby="offcanvasStartLabel">
+              <div class="offcanvas-header">
+                <h5 id="offcanvasStartLabel">Check Courses</h5>      
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+              <p>Check our courses on the website:</p>
+                <a href="https://www.udemy.com/" target="_blank">Udemy</a>
+                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+                <a href="https://www.google.es/" target="_blank">Google</a>
+              </div>
+            </div>  
+
+            <!---------------Toggle right offcanvas---------->
+            <button class="main__button-secundary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Learn More</button> 
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">Learn More</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quasi doloremque doloribus neque cum, exercitationem facilis quidem iusto quam impedit? Fugit impedit, quod ratione porro magni quibusdam unde amet officiis.</p>
+              </div>
+            </div> 
+          </div>
+          <!-------------Main - img--------->
+          <div class="image-container col-md-4">
+            <img class="img-fluid" id="rotating-image" src="image/logo.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-----------Our Comanpy and Partners----------->
+    <div class="partners container-lg text-center mt-5">
+        <h2 class="partners__header fw-bold">Our Company and Partners</h2>
+        <img class="img-fluid my-5" src="image/partner.jpg.jpg" alt="slika nasih partnera">
+    </div>
+
+    <!-----------------Our Courses------------------>
+
+    <section id="courses">
+        <div class="courses container-lg" >
+            <h2 class="courses__head fw-bold">Our Courses</h2>
+        </div>
+        <div class="car container-lg">
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$19.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$5.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$10.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$15.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$25.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$5.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$10.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+  
+          <div class="card">
+              <img
+                src="image/item.jpg"
+                alt="Product Image"
+                class="card-image"
+              />
+              <div class="card-details">
+                <h3 class="card-title">Artificial Intelligence</h3>
+                <p class="card-description">Jhon David</p>
+                <p class="card-price">$25.99</p>
+                <button class="add-to-cart">Buy now</button>
+              </div>
+          </div>
+      </div>       
+    </section>
+ 
+    <!-------------Our Features and Services--------------->
+     <section id="pricing">
+      <div  class="features container-lg text-center">
+        <h2 class="features__head fw-bold ">Our Features and Services</h2>
+        <p class="features__text my-5">Lorem ipsum dolor sit amet consectetur. Euismod diam phasellus quis aliquet purus sem ornare mollis vulputate. Sapien purus faucibus massa pharetra.</p>
+      </div>
+      <!--------------------Flip Card---------------->
+      <div class="container-lg">
+        <div class="card-wrapper">
+          <div class="our-cards">
+            <div class="card-front">
+              <img src="image/key-alt.jpg" alt="">
+                <h4>Life Time Access</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet in porttitor in sit sem eu, nunc diam. Quis nisi, </p>
+            </div>
+            <div class="card-back">
+              <h2>Card 1 - Back</h2>
+            </div>
+          </div>
+          <div class="our-cards">
+            <div class="card-front">
+              <img src="image/monitor-alt-4.jpg" alt="">
+              <h4>Life Time Access</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet in porttitor in sit sem eu, nunc diam. Quis nisi, </p>
+            </div>
+            <div class="card-back">
+              <h2>Card 2 - Back</h2>
+            </div>
+          </div>
+          <div class="our-cards">
+            <div class="card-front">
+              <img src="image/tabler_certificate.jpg" alt="">
+              <h4>Life Time Access</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet in porttitor in sit sem eu, nunc diam. Quis nisi, </p>
+            </div>
+            <div class="card-back">
+              <h2>Card 3 - Back</h2>
+            </div>
+          </div>
+          <div class="our-cards">
+            <div class="card-front">
+              <img src="image/user.jpg" alt="">
+              <h4>Life Time Access</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet in porttitor in sit sem eu, nunc diam. Quis nisi, </p>
+            </div>
+            <div class="card-back">
+              <h2>Card 3 - Back</h2>
+            </div>
+          </div>
+          <div class="our-cards">
+            <div class="card-front">
+              <img src="image/badge-check.jpg" alt="">
+              <h4>Life Time Access</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet in porttitor in sit sem eu, nunc diam. Quis nisi, </p>
+            </div>
+            <div class="card-back">
+              <h2>Card 3 - Back</h2>
+            </div>
+          </div>
+          <div class="our-cards">
+            <div class="card-front">
+              <img src="image/badge-dollar.jpg" alt="">
+              <h4>Life Time Access</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet in porttitor in sit sem eu, nunc diam. Quis nisi, </p>
+            </div>
+            <div class="card-back">
+              <h2>Card 3 - Back</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+     <!--------------Best Platform------------->
+     <section id="about">
+        <div class="container-lg">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+              <img class="img-fluid" src="image/Group 14614.png" alt="Suport Image">
+            </div>
+            <div class="col-md-6 text-center p-4 ">
+              <h2 class="fw-bold">Best Platform to grow</h2>
+              <p class="py-5">Lorem ipsum dolor sit amet consectetur. Maecenas ac elementum lacus vel vitae sed nisi aliquam aliquet. Vel adipiscing placerat tellus faucibus diam mauris ipsum vitae. Justo adipiscing integer dictum tortor viverra vel .</p>
+              <button id="learn-more-button" class="support-button">Learn more</button>
+            </div>
+          </div>
+        </div>
+       <!-- Modal -->
+        <div id="platform" class="platform">
+            <div class="platform__content">
+                <span class="close">&times;</span>
+                <img class="img-fluid" src="#" alt="Modal Image" id="modal-image">
+                <p id="modal-text"></p>
+            </div>
+        </div>
+      </section>
+      <!-------------Student Suport------------->
+      <section>
+        <div class="container-lg">
+          <div class="student row align-items-center">
+            <div class="student__suport col-md-6 text-center p-4 order-2 order-md-1">
+              <h2 class="student__head fw-bold">24/7 Students Support</h2>
+              <p class="student__text py-5">Lorem ipsum dolor sit amet consectetur. Sit est lacus blandit elementum amet elit. Varius faucibus sit donec molestie. Vulputate sodales diam et ut erat tempor. Tempor condimentum sodales morbi nunc.</p>
+              <button id="read-more-button" class="student-button">Read more</button>
+            </div>
+            <div class="col md-6 text-center order-1 order-md-2">
+              <img class="img-fluid" src="image/Group 14593.png" alt="Student suport image">
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div id="modal-suport" class="suport">
+          <div class="suport__content">
+              <span class="close-student">&times;</span>
+              <img class="img-fluid" src="#" alt="Modal Image" id="modal-image-student">
+              <p id="modal-text-student"></p>
+          </div>
+      </div>
+      </section>
+
+      <!----------------Article------------------>
+      <section class="article">
+        <div class="article__section container-lg">
+          <div class="article__box text-center">
+            <h2 class="article__head fw-bold">Our Latest news & Article</h2>
+          </div>
+  
+          <div class="articles">
+            <div class="articles__cart">
+              <img class="img-fluid" src="image/Rectangle 1073.png" alt="">
+              <div class="articles__texts">
+                <h4>Web Development</h4>
+                <hr class="articles__hr">
+                <p class="py-3">Lorem ipsum dolor sit<br>amet consectetur. sit amet </p>
+                <button class="articles__button" data-target="popup-1">Read more &#8594</button>
+              </div>
+              <div id="popup-1" class="popup">
+                <div class="popup__content">
+                  <h2>Pop-up 1</h2>
+                  <p>Ovde možete staviti tekst ili sadržaj pop-up prozora.</p>
+                  <button class="popup__close">&times;</button>
+                </div>
+              </div>
+            </div>
+            <div class="articles__cart">
+              <img class="img-fluid" src="image/Rectangle 1073.png" alt="">
+              <div class="articles__texts">
+                <h4>Web Development</h4>
+                <hr class="articles__hr">
+                <p class="py-3">Lorem ipsum dolor sit<br>amet consectetur. sit amet </p>
+                <button class="articles__button">Read more &#8594</button>
+              </div>
+              <div id="popup-2" class="popup">
+                <div class="popup__content">
+                  <h2>Pop-up 2</h2>
+                  <p>Ovde možete staviti tekst ili sadržaj pop-up prozora.</p>
+                  <button class="popup__close">&times;</button>
+                </div>
+              </div>
+            </div>
+            <div class="articles__cart">
+              <img class="img-fluid" src="image/Rectangle 1073.png" alt="">
+              <div class="articles__texts">
+                <h4>Web Development</h4>
+                <hr class="articles__hr">
+                <p class="py-3">Lorem ipsum dolor sit<br>amet consectetur. sit amet </p> 
+                <button class="articles__button">Read more &#8594</button>
+              </div>
+              <div id="popup-3" class="popup">
+                <div class="popup__content">
+                  <h2>Pop-up 3</h2>
+                  <p>Ovde možete staviti tekst ili sadržaj pop-up prozora.</p>
+                  <button class="popup__close">&times;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------------Subscribe--------------------->
+      <section id="contact">
+        <div class="container-lg">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+              <img class="img-fluid" src="image/Email campaign-amico 1.png" alt="Subscribe image">    
+            </div>
+            <div class="subscribe col-md-6 p-4">
+              <h2 class="subscribe__head fw-bold">Subscribe to our newsletter</h2>
+              <p class="py-3">Lorem ipsum dolor sit amet consectetur. Velit enim est urna est massa cras. Sed varius convallis netus aliquet duis ut.</p>
+              <input class="subscribe__input input-email" type="text" placeholder="Enter your email">
+              <button class="subscribe__button">Join now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!----------------Footer-------------->
+      <footer>
+        <div class="container">
+          <div class="row footer__row align-items-center">
+            <div class="col-md-4 footer__column">
+              <div class="footer__logo-container">
+                <img src="image/logo.png" alt="Logo" class="footer__logo">
+                <span class="footer__company-name">OUTHSCHOOL</span>
+              </div>
+            </div>
+            <div class="col-md-4 footer__column text-center">
+              <span class="footer__copywrite">&copy; 2023 Company Name. All rights reserved.</span>
+            </div>
+            <div class="col-md-4 footer__column text-end">
+              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+      <!-------------Button Back to Top---------------->
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i> </button>
+      
+
+      
+      
+      
+
+
+
+
+     
+    
+   
+   
+
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

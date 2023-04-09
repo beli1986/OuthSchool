@@ -1,0 +1,65 @@
+/**********Nav-bar***********/
+.navbar{    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: $back-color;
+    
+
+    a{
+        color: $text-color;
+    }
+
+    a:hover{
+        color: $text-color;
+    }
+}
+.nav-link{
+    color: $text-color!important;
+}
+.nav-right a{
+    padding-right: 20px;
+}
+
+.nav-right{
+    padding-right: 20px;
+    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+#cart-icon{
+    font-size: 28px!important;
+    top: 5px!important;
+}
+
+@media screen and (max-width: 768px) {
+   .nav-right{
+    padding-right: 0!important;
+    display: contents!important;
+   }
+
+   .nav-menu{
+    order: 2;
+   }
+   
+   .navbar-toggler {
+    order: 1;
+    margin-left: 20px;
+   }
+
+   .navbar-brand{
+    flex: 1;
+   }
+
+}
+  
+@media screen and (max-width: 480px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
